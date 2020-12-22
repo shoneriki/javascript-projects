@@ -10,35 +10,35 @@ const quizData = [
     b: '30',
     c: '32',
     d: '35',
-    correct: 'c'
+    correct: 'c',
   }, {
     question: 'What is the most used programming language in 2020',
     a: 'Java',
     b: 'C',
     c: 'Python',
     d: 'JavaScript',
-    correct: 'c'
+    correct: 'c',
   }, {
     question: 'Who was the President of the US in 2020',
     a: 'George Soros',
     b: 'Donald Trump',
     c: 'Joe Biden',
     d: 'Michelle Obama',
-    correct: 'b'
+    correct: 'b',
   }, {
     question: 'What does HTML stand for',
     a: 'Hypertext Markup Language',
     b: 'Helicopter Text Making Language',
     c: 'Helicopters Terminals Motorboats Lamborginis',
-    d: 'Hacking Text Markup Language',
-    correct: a
+    d: 'Hackin Text Markup Language',
+    correct: 'a',
   }, {
     question:'What year was JavaScript launched?',
     a: '1996',
     b: '1995',
     c: '1994',
     d: 'none of the above',
-    correct: d
+    correct: 'b',
   }
 
 ];
@@ -47,6 +47,7 @@ const quizData = [
 // store answer
 // need to deselect option after submitting previous answer
 
+const quiz = document.getElementById('quiz');
 const answersEls = document.querySelectorAll('.answer');
 const questionEl = document.getElementById('question');
 const a_text = document.getElementById('a_text');
@@ -104,8 +105,7 @@ submitBtn.addEventListener("click", () => {
       if(currentQuiz < quizData.length) {
         loadQuiz();
       } else {
-        // Show results
-        alert('You finished! ');
+        quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly.</h2> <button onclick="location.reload()"> Reload </button>`
       }
     }
 });

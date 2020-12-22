@@ -27,7 +27,9 @@ body {
 }
 
 h2 {
+  padding: 1rem;
   margin: 0;
+  text-align: center;
 }
 
 ul {
