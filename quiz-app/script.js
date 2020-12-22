@@ -47,6 +47,7 @@ const quizData = [
 // store answer
 // need to deselect option after submitting previous answer
 
+const answersEls = document.querySelectorAll('.answer');
 const questionEl = document.getElementById('question');
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -60,6 +61,8 @@ let score = 0;
 loadQuiz();
 
 function loadQuiz() {
+  deselectAnswers();
+
   const currentQuizData = quizData[currentQuiz];
   questionEl.innerText = currentQuizData.question;
   a_text.innerText = currentQuizData.a;
@@ -69,7 +72,6 @@ function loadQuiz() {
 }
 
 function getSelected () {
-  const answersEls = document.querySelectorAll('.answer');
 
   let answer = undefined;
 
@@ -78,9 +80,13 @@ function getSelected () {
       answer = answerEl.id;
     }
   });
-
   return answer;
+}
 
+function deselectAnswers() {
+  answersEls.forEach((answerEl) => {
+    answerEl.checked = false;
+  });
 }
 
 submitBtn.addEventListener("click", () => {
