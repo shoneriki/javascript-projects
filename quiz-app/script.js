@@ -5,7 +5,7 @@
 
 const quizData = [
   {
-    question: 'How old is Sho as of 2020',
+    question: 'How old is Sho as of December 2020',
     a: '28',
     b: '30',
     c: '32',
@@ -41,4 +41,5 @@ const quizData = [
     correct: d
   }
 
-]
+];
+
