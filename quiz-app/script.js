@@ -43,6 +43,10 @@ const quizData = [
 
 ];
 
+// TODO: Show results, no submit unless answer is chosen
+// store answer
+// need to deselect option after submitting previous answer
+
 const questionEl = document.getElementById('question');
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -51,6 +55,7 @@ const d_text = document.getElementById('d_text');
 const submitBtn = document.getElementById('submit');
 
 let currentQuiz = 0;
+let score = 0;
 
 loadQuiz();
 
@@ -63,13 +68,35 @@ function loadQuiz() {
   d_text.innerText = currentQuizData.d;
 }
 
+function getSelected () {
+  const answersEls = document.querySelectorAll('.answer');
+  answersEls.forEach((answerEl) => {
+    if(answerEl.checked){
+      return answerEl.id;
+    }
+  });
+
+  return undefined;
+
+}
+
 submitBtn.addEventListener("click", () => {
+
+  const answer = getSelected();
+  if(answer) {
+    if(answer === quizData[currentQuiz])
+    {
+
+    }
   currentQuiz++;
 
-  if(currentQuiz < quizData.length) {
-    loadQuiz();
-  } else {
-    alert('You finished! ')
+
+    if(currentQuiz < quizData.length) {
+      loadQuiz();
+    } else {
+      alert('You finished! ')
+    }
   }
 
-})
+
+});
