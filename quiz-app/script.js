@@ -70,33 +70,36 @@ function loadQuiz() {
 
 function getSelected () {
   const answersEls = document.querySelectorAll('.answer');
+
+  let answer = undefined;
+
   answersEls.forEach((answerEl) => {
     if(answerEl.checked){
-      return answerEl.id;
+      answer = answerEl.id;
     }
   });
 
-  return undefined;
+  return answer;
 
 }
 
 submitBtn.addEventListener("click", () => {
-
+  // check to see the answer
   const answer = getSelected();
-  if(answer) {
-    if(answer === quizData[currentQuiz])
-    {
 
+  console.log(answer);
+
+    if (answer) {
+      if(answer === quizData[currentQuiz].correct) {
+        score++;
+      }
+
+      currentQuiz++;
+      if(currentQuiz < quizData.length) {
+        loadQuiz();
+      } else {
+        // Show results
+        alert('You finished! ');
+      }
     }
-  currentQuiz++;
-
-
-    if(currentQuiz < quizData.length) {
-      loadQuiz();
-    } else {
-      alert('You finished! ')
-    }
-  }
-
-
 });
