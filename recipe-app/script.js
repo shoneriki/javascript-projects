@@ -134,7 +134,7 @@ function addMealFav(mealData) {
 
   const btn = favMeal.querySelector('.clear');
 
-  btn.addEventListener('click', () => {
+  favMeal.addEventListener('click', () => {
     removeMealLS(mealData.idMeal);
 
     fetchFavMeals();
@@ -169,7 +169,6 @@ searchBtn.addEventListener('click', async () => {
   // clean container
   mealsEl.innerHTML = '';
   const search = searchTerm.value;
-
   const meals = await getMealsBySearch(search);
 
   if (meals) {
