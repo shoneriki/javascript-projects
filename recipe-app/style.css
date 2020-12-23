@@ -154,7 +154,7 @@ header button {
   color:rebeccapurple;
 }
 
-.meal-info-container {
+.popup-container {
   background-color: rgba(0,0,0,0.5);
   display:flex;
   align-items: center;
@@ -166,13 +166,13 @@ header button {
   bottom:0;
 }
 
-.meal-info-container.hidden {
+.popup-container.hidden {
   opacity: 0;
   user-select: none;
   pointer-events: none;
 }
 
-.meal-info{
+.popup{
   background-color: #fff;
   border-radius: 5px;
   padding: 2rem;
@@ -180,11 +180,7 @@ header button {
   width: 100%;
 }
 
-.meal-info h1{
-  max-width: 100%;
-}
-
-.meal-info .close-popup {
+.popup .close-popup {
   background-color: transparent;
   border: none;
   font-size: 1.5rem;
@@ -192,4 +188,8 @@ header button {
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+.meal-info h1{
+  max-width: 100%;
 }
