@@ -1,7 +1,7 @@
 const mealsEl = document.getElementById('meals');
 const favoriteContainer = document.getElementById('fav-meals')
 const mealPopup = document.getElementById('meal-popup');
-const mealInfo = document.getElementById("meal-info");
+const mealInfoEl = document.getElementById("meal-info");
 const popupCloseBtn = document.getElementById('close-popup');
 
 const searchTerm = document.getElementById('search-term');
@@ -51,7 +51,8 @@ function addMeal(mealData, random = false) {
       ${random ? `
         <span class="random">
           Random Recipe
-        </span>` : ''}
+        </span>` : ''
+        }
       <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
     </div>
     <div class="meal-body">
@@ -76,6 +77,10 @@ function addMeal(mealData, random = false) {
     favoriteContainer.innerHTML = '';
     fetchFavMeals();
   });
+
+  meal.addEventListener('click', () => {
+    showMealInfo(mealData);
+  })
 
   mealsEl.appendChild(meal);
 }
@@ -136,6 +141,26 @@ function addMealFav(mealData) {
   })
 
   favoriteContainer.appendChild(favMeal);
+}
+
+function showMealInfo(mealData) {
+  // update the Meal Info
+  const mealEl = document.createElement('div');
+
+  mealEl.innerHTML = `
+    <h1>${mealData.strMeal}</h1>
+    <img
+      src="${mealData.strMealThumb}" alt=""
+    />
+    <p>
+      ${mealData.strInstructions}
+    </p>
+  `
+
+  mealInfoEl.appendChild(mealEl);
+
+  // show the popup
+  mealPopup.classList.remove('hidden');
 }
 
 searchBtn.addEventListener('click', async () => {
