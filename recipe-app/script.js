@@ -171,13 +171,10 @@ function showMealInfo(mealData) {
       ${mealData.strInstructions}
     </p>
     <h3>Ingredients:</h3>
-    <ul>${ingredients
-      .map(
-        (ing) => `
-        <li>${ing}</li>
-        `
-          )
-          .join("")}
+    <ul>
+      ${
+        ingredients.map((ing) =>`<li>${ing}</li>`).join("")
+      }
     </ul>
   `;
 
