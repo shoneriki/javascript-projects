@@ -105,11 +105,6 @@ header button {
   width: 75px;
 }
 
-.fav-meals li:hover span{
-  white-space: normal;
-  overflow: auto;
-}
-
 .meal {
   border-radius: 3px;
   box-shadow: 0 0 10px 2px #3333331A;
