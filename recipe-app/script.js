@@ -63,6 +63,9 @@ function addMeal(mealData, random = false) {
       addMealLS(mealData.idMeal);
       btn.classList.add("active");
     }
+    // clean container
+    favoriteContainer.innerHTML = '';
+    fetchFavMeals();
   });
 
   meals.appendChild(meal);
