@@ -41,5 +41,11 @@ function addMeal(mealData, random = false) {
     </div>
   `;
 
+  const btn = meal.querySelector(".meal-body .fav-btn");
+
+  btn.addEventListener("click", () => {
+    btn.classList.toggle('active')
+  });
+
   meals.appendChild(meal);
 }
