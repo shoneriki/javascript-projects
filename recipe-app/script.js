@@ -144,6 +144,8 @@ function addMealFav(mealData) {
 }
 
 function showMealInfo(mealData) {
+  // clean info
+  mealInfoEl.innerHTML = '';
   // update the Meal Info
   const mealEl = document.createElement('div');
 
