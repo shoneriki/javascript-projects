@@ -21,7 +21,9 @@ img {
 
 .mobile-container{
   background-color: #fff;
-  box-shadow: 0 0 5px #3333331A;
+  box-shadow: 0 0 10px 2px #3333331A;
+  border-radius: 3px;
+  overflow: bidden;
   width: 400px;
 }
 
