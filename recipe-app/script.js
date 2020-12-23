@@ -94,6 +94,8 @@ function getMealsLS() {
 }
 
 async function fetchFavMeals() {
+
+  favoriteContainer.innerHTML = "";
   const mealIds = getMealsLS();
 
   const meals = [];
@@ -108,14 +110,21 @@ async function fetchFavMeals() {
 
 function addMealFav(mealData) {
   const favMeal = document.createElement('li');
-  meals.classList.add('meal');
+  // meals.classList.add('meal');
 
   favMeal.innerHTML = `
-    <li>
       <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
       <span>${mealData.strMeal}</span>
-    </li>
+      <button class="clear"><i class="fas fa-window-close"></i></button>
   `;
+
+  const btn = favMeal.querySelector('.clear');
+
+  btn.addEventListener('click', () => {
+    removeMealLS(mealData.idMeal);
+
+    fetchFavMeals();
+  })
 
   favoriteContainer.appendChild(favMeal);
 }
