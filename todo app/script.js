@@ -12,6 +12,10 @@ form.addEventListener("submit", (e) => {
     todoEl.innerText = todoText;
     todos.appendChild(todoEl);
 
+    todoEl.addEventListener('click', () => {
+      todoEl.classList.toggle('completed');
+    })
+
     input.value = '';
   }
 });
