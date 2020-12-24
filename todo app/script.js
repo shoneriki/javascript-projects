@@ -10,7 +10,8 @@ form.addEventListener("submit", (e) => {
   if(todoText) {
     const todoEl = document.createElement("li");
     todoEl.innerText = todoText;
-
     todos.appendChild(todoEl);
+
+    input.value = '';
   }
 });
