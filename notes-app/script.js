@@ -9,7 +9,7 @@ function addNewNote() {
   note.classList.add('note');
 
   note.innerHTML = `
-    <div class="note">
+    <div class="notes">
       <div class="tools">
         <button class="edit"><i class="fas fa-edit"></i></button>
         <button class="delete"><i class="fas fa-trash-alt"></i></button>
@@ -43,5 +43,5 @@ function addNewNote() {
   });
 
 
-    document.body.appendChild('note');
+    document.body.appendChild(note);
 }
