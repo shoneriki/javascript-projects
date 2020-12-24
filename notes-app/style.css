@@ -17,3 +17,18 @@ body {
   height: 400px;
   width: 400px;
 }
+
+.notes .tools {
+  background-color: #9ec862;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.notes .tools button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
