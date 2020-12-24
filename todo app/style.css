@@ -16,3 +16,9 @@ h1 {
   text-align: center;
   opacity: 0.4;
 }
+
+form {
+  margin: auto;
+  width: 400px;
+  max-width: 100%;
+}
