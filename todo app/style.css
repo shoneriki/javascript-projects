@@ -6,8 +6,13 @@
 
 body {
   background-color: #f5f5f5;
+  color: #444;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   font-family: "Poppins", sans-serif;
   margin: 0;
+  min-height: 100vh;
 }
 
 h1 {
@@ -19,13 +24,13 @@ h1 {
 
 form {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: auto;
   width: 400px;
   max-width: 100%;
 }
 
 .input {
   border: none;
+  color: #444;
   font-size: 2rem;
   padding: 1rem 2rem;
   display: block;
@@ -53,4 +58,10 @@ form {
 .todos li.completed {
   color: #b5b5b5;
   text-decoration: line-through;
+}
+
+small {
+  color: #b5b5b5;
+  margin-top: 3rem;
+  text-align: center;
 }
