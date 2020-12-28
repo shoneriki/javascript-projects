@@ -16,15 +16,12 @@ async function getUser(user) {
 }
 
 function createUserCard(user) {
-  const card = document.createElement('div');
-  card.classList.add('card');
-
   const cardHTML = `
     <div class="card">
       <div>
-        <img src="${user.avatar_url}" alt="${user.name}" />
+        <img class="avatar"src="${user.avatar_url}" alt="${user.name}" />
       </div>
-      <div>
+      <div class="user-info">
         <h2>${user.name}</h2>
         <p>${user.bio}</p>
 
