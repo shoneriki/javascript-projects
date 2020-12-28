@@ -4,6 +4,8 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
+getUser("shoneriki");
+
 async function getUser(user) {
   const resp = await fetch(APIURL + user)
   const respData = await resp.json();
@@ -14,35 +16,12 @@ async function getUser(user) {
 }
 
 function createUserCard(user) {
-  const cardHTML = `
-    <div class="card">
-      <div>
-        <img src="${user.avatar_url}" alt="${user.name}" />
-      </div>
-      <div>
-        <h2>${user.name}</h2>
-        <p>${user.bio}</p>
+  const card = document.createElement('div');
+  card.classList.add('card');
 
-        <ul>
-          <li>${user.followers}</li>
-          <li>${user.following}</li>
-          <li>${user.public_repos}</li>
-        </ul>
-      </div>
+  card.innerHTML = `
+    <div>
+      <img src="${user.avatar_url}" alt="${user.name}" />
     </div>
   `
-
-  main.innerHTML = cardHTML;
 }
-
-form.addEventListener("", (e)=> {
-  e.preventDefault();
-
-  const user = search.nodeValue;
-
-  if(user) {
-    getUser();
-
-    search.value = "";
-  }
-});
