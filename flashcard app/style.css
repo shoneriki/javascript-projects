@@ -28,7 +28,7 @@
 }
 
 #check {
-  background-color: rgb(83, 235, 83);
+  background-color: purple;
   color: white;
   padding: 20px;
   border-radius: 16px;
@@ -38,7 +38,7 @@
 
 #check:hover {
 transform: scale(1.1);
-background-color: purple;
+background-color: red;
 animation: effect 0.4s infinite;
 transition: 1.5s;
 }
@@ -54,7 +54,7 @@ transition: 1.5s;
 
 #next:hover {
 transform: scale(1.1);
-background-color: red;
+background-color: blue;
 animation: yeffect 0.4s infinite;
 transition: 1.5s;
 }
@@ -68,7 +68,7 @@ transition: 1.5s;
     20% {
         transform: translateX(-4px);
     }
-    
+
     40% {
         transform: translateX(-2px);
     }
