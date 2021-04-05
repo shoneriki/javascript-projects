@@ -7,11 +7,15 @@
 .term {
   border: solid 4px red;
   text-align: center;
+  width: 45%;
+  margin: auto;
   margin-top: 100px;
 }
 
 .definition {
   border: solid 4px blue;
   text-align: center;
+  width: 45%;
+  margin: auto;
   margin-top: 100px;
 }
