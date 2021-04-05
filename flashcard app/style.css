@@ -20,6 +20,7 @@
   width: 45%;
   margin: auto;
   margin-top: 100px;
+  display: none;
 }
 
 .button {
@@ -27,7 +28,7 @@
   margin-top: 100px;
 }
 
-#check {
+.check {
   background-color: purple;
   color: white;
   padding: 20px;
@@ -36,14 +37,14 @@
   cursor: pointer;
 }
 
-#check:hover {
+.check:hover {
 transform: scale(1.1);
 background-color: red;
 animation: effect 0.4s infinite;
 transition: 1.5s;
 }
 
-#next {
+.next {
   background-color: rgb(83, 235, 83);
   color: white;
   padding: 20px;
@@ -52,7 +53,7 @@ transition: 1.5s;
   cursor: pointer;
 }
 
-#next:hover {
+.next:hover {
 transform: scale(1.1);
 background-color: blue;
 animation: yeffect 0.4s infinite;
