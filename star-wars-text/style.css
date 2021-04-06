@@ -31,7 +31,7 @@ body::after {
   font-weight: bold;
   text-align: justify;
   position: relative;
-  animation: scroll 60s linear forwards;
+  animation: scroll 30s linear forwards;
 }
 h1,h2 {
   text-align: center;
