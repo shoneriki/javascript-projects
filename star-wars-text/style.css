@@ -11,5 +11,18 @@ body {
   height: 100%;
   width: 60%;
   margin: 0 auto;
-  color: white;
+
+}
+
+.scroll-text {
+  color: #ffc909;
+  font-size: 3vw;
+  line-height: 1.5em;
+  font-weight: bold;
+  text-align: justify;
+  position: relative;
+}
+
+h1, h2 {
+  text-align: center;
 }
