@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body {
+  background: rgb(20,20,20);
+  overflow: hidden;
+  font-family: "Raleway";
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  color: white;
+}
