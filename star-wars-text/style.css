@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 body {
-  background: rgb(20,20,20);
+  background-image: url(image/space_background.jpg);
   overflow: hidden;
   font-family: "Raleway";
+  margin: 50% 0 0 0;
+  position: relative;
 }
 
 .wrapper {
@@ -21,8 +23,14 @@ body {
   font-weight: bold;
   text-align: justify;
   position: relative;
+  animation: scroll 60s linear forwards;
 }
 
 h1, h2 {
   text-align: center;
+}
+
+@keyframes scroll {
+  from { top: 0; }
+  to { top: -7500px }
 }
