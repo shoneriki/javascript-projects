@@ -23,6 +23,13 @@ document.addEventListener('mousemove', (e) => {
 })
 
 function setButtonPosition(left, top) {
+  const windowBox = document.body.getBoundingClientRect()
+  const buttonBox = fleeButton.getBoundingClientRect()
+
+  if(distanceFromCenter(left, windowBox.left, buttonBox.width) < 0) {
+    left = windowBox.right - buttonBox.width - OFFSET
+  }
+
   fleeButton.style.left = `${left}px`
   fleeButton.style.top = `${top}px`
   console.log(x, y)
