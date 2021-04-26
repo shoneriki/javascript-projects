@@ -32,6 +32,9 @@ function setButtonPosition(left, top) {
   if(distanceFromCenter(left, windowBox.right, buttonBox.width) > 0) {
     left = windowBox.left + OFFSET
   }
+  if(distanceFromCenter(top, windowBox.top, buttonBox.height) < 0) {
+    top = windowBox.bottom - buttonBox.height - OFFSET
+  }
 
   fleeButton.style.left = `${left}px`
   fleeButton.style.top = `${top}px`
