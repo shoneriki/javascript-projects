@@ -1,4 +1,5 @@
 const fleeButton = document.getElementById('fleeing-button');
+const OFFSET = 100
 
 fleeButton.addEventListener('click', () => {
   alert('Nice Try')
@@ -12,8 +13,21 @@ document.addEventListener('mousemove', (e) => {
   const horizontalDistanceFrom = distanceFromCenter(buttonBox.x, x, buttonBox.width)
   const verticalDistanceFrom = distanceFromCenter(buttonBox.y, y, buttonBox.height)
   const horizontalOffset = buttonBox.width / 2 + OFFSET
+  const verticalOffset = buttonBox.height / 2 + OFFSET
+  if (Math.abs(horizontalDistanceFrom) <= horizontalOffset && Math.abs(verticalDistanceFrom) <= verticalOffset) {
+    setButtonPosition(
+      buttonBox.x + horizontalOffset / horizontalDistanceFrom * 10,
+      buttonBox.y + verticalOffset / verticalDistanceFrom * 10
+    )
+  }
 })
 
+function setButtonPosition(left, top) {
+  fleeButton.style.left = `${left}px`
+  fleeButton.style.top = `${top}px`
+  console.log(x, y)
+}
+
 function distanceFromCenter(boxPosition, mousePosition, boxSize) {
-  return boxPosition = mousePosition + boxSize / 2
+  return boxPosition - mousePosition + boxSize / 2
 }
