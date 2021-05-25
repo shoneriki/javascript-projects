@@ -4,15 +4,18 @@ const stopButton = document.getElementById('stop-button');
 const textInput = document.getElementById('text');
 const speedInput = document.getElementById('speed');
 
-playButton.addEventListener('click', function(event) {
+playButton.addEventListener('click', () => {
   playText(textInput.value)
 })
 pauseButton.addEventListener('click', pauseText)
 
 function playText(text) {
+  if (speechSynthesis.paused && speechSynthesis.speaking) {
+    return speechSynthesis.resume()
+  }
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.rate = speedInput.value || 1;
-  speechSynthesis.cancel();
+  speechSynthesis.cancel()
   utterance.addEventListener('end', () => {
     textInput.disabled = false
   })
@@ -21,5 +24,7 @@ function playText(text) {
 }
 
 function pauseText() {
-  if (speechSynthesis.speaking) speechSynthesis.pause()
+  if (speechSynthesis.speaking){
+    speechSynthesis.pause()
+  }
 }
