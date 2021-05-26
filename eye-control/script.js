@@ -12,10 +12,10 @@ let nextImageElement = getNewImage(true);
 webgazer.setGazeListener((data, timestamp) => {
     if (data == null || lookDirection === "STOP") return
 
-    if (data.x < LEFT_CUTOFF && lookDirection !== 'LEFT') {
+    if (data.x < LEFT_CUTOFF && lookDirection !== 'LEFT' && lookDirection !== 'RESET') {
       startLookTime = timestamp;
       lookDirection = 'LEFT'
-    } else if (data.x > RIGHT_CUTOFF && lookDirection !== 'RIGHT') {
+    } else if (data.x > RIGHT_CUTOFF && lookDirection !== 'RIGHT' && lookDirection !== 'RESET') {
       startLookTime = timestamp
       lookDirection = 'RIGHT'
     } else if (data.x >= LEFT_CUTOFF && data.x <= RIGHT_CUTOFF) {
@@ -31,7 +31,14 @@ webgazer.setGazeListener((data, timestamp) => {
       }
 
       startLookTime = Number.POSITIVE_INFINITY;
-      lookDirection = 'STOP'
+      lookDirection = 'STOP';
+      setTimeout(() => {
+        imageElement.remove();
+        nextImageElement.classList.remove('next');
+        imageElement = nextImageElement;
+        nextImageElement = getNewImage(true);
+        lookDirection = 'RESET'
+      }, 200)
     }
   })
 .begin()
@@ -39,6 +46,7 @@ webgazer.setGazeListener((data, timestamp) => {
 function getNewImage(next = false) {
   const img = document.createElement('img');
   img.src="https://picsum.photos/1000?" + Math.random();
+  // img.src = "https://placedog.net/640/480?" + Math.random();
   if (next) img.classList.add("next")
   document.body.append(img)
   return img
