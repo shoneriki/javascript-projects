@@ -43,6 +43,8 @@ webgazer.setGazeListener((data, timestamp) => {
   })
 .begin()
 
+webgazer.showVideoPreview(false).showPredictionPoints(false)
+
 function getNewImage(next = false) {
   const img = document.createElement('img');
   img.src="https://picsum.photos/1000?" + Math.random();
