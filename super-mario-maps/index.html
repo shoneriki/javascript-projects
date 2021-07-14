@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
   <title>Super Mario World Google Map</title>
+
 </head>
 
 <body>
@@ -16,10 +17,16 @@
     Dark Green: rgb(64, 138, 30);
     Water: rgb(0, 89, 253);
     Road: rgb(254, 234, 179);
+    api key:AIzaSyCLkjXrmZiJGqNWK1qOQZQgQZBZ3IEyrzI;
     map id: dca967606eeb7b76;
-
   -->
+  <h1>Where Are We?</h1>
 
+  <div id="map"></div>
+  <script src="script.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLkjXrmZiJGqNWK1qOQZQgQZBZ3IEyrzI&map_ids=dca967606eeb7b76&callback=initMap">
+  </script>
 </body>
 
 </html>
